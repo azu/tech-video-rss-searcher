@@ -1,0 +1,28 @@
+{
+  "name": "tech-video-rss-searcher",
+  "version": "1.0.0",
+  "description": "tech video searcher",
+  "main": "app.js",
+  "dependencies": {
+    "debowerify": "~0.5.2"
+  },
+  "devDependencies": {
+    "debowerify": "~0.5.2",
+    "gulp": "~3.4.0",
+    "gulp-browserify": "~0.3.3",
+    "tiny-lr": "0.0.5",
+    "connect": "~2.12.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tech",
+    "video",
+    "rss",
+    "search",
+    "browserify"
+  ],
+  "author": "azu",
+  "license": "MIT"
+}
