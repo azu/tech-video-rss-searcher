@@ -3,6 +3,7 @@
 <head>
     <title>Tech Video RSS Searcher</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/style.css">
 </head>
 <body>
 <div class="container">
@@ -30,7 +31,7 @@
 </script>
 <script id='racive-search-result' type='text/ractive'>
 {{#tag}}
-<button type="button" proxy-click="addToList" class="btn btn-primary">Add to list</button>
+<button type="button" proxy-click="addToList" class="btn btn-primary add-to-list">Add to list</button>
 <ul>
   <li><a href="http://vimeo.com/tag:{{encodeURIComponent(tag)}}" title="Vimeo rss">{{tag}} on Vimeo</a></li>
   <li><a href="http://www.youtube.com/results?search_sort=video_date_uploaded&search_query={{encodeURIComponent(tag)}}" title="Youtube rss">{{tag}} on Youtube</a></li>
