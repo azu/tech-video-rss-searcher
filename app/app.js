@@ -9,3 +9,5 @@ var ractive = new Ractive({
     template: '#myTemplate',
     data: { greeting: 'Hey', recipient: 'world' }
 });
+
+
