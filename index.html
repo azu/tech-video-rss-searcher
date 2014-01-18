@@ -1,24 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>App</title>
+    <title>Tech Video RSS Searcher</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div id="search-box"></div>
-<div id="search-result"></div>
-<div id="subscriber-box"></div>
-<div id="download-link"></div>
+<div class="container">
+    <div class="row clearfix">
+        <div class="col-md-12 column">
+            <h1>Tech Video RSS Searcher</h1>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-md-6 column">
+            <div id="search-box"></div>
+            <div id="search-result"></div>
+        </div>
+        <div class="col-md-6 column">
+            <h3>RSS tag list</h3>
+            <!--list -->
+            <div id="subscriber-box"></div>
+            <div id="download-link"></div>
+        </div>
+    </div>
+</div>
+
 <script id='racive-search-box' type='text/ractive'>
 <input placeholder='Type tag' value='{{tag}}' proxy-keydown="onEnter" />
 </script>
 <script id='racive-search-result' type='text/ractive'>
 {{#tag}}
-<button type="button" proxy-click="addToList" >Add to list</button>
+<button type="button" proxy-click="addToList" class="btn btn-primary">Add to list</button>
 <ul>
   <li><a href="http://vimeo.com/tag:{{encodeURIComponent(tag)}}" title="Vimeo rss">{{tag}} on Vimeo</a></li>
   <li><a href="http://www.youtube.com/results?search_sort=video_date_uploaded&search_query={{encodeURIComponent(tag)}}" title="Youtube rss">{{tag}} on Youtube</a></li>
 </ul>
 {{/tag}}
+
 </script>
 
 <script id='racive-subscriber-box' type='text/ractive'>
@@ -27,12 +47,15 @@
   <li>{{.}}</li>
 </ul>
 {{/tags}}
+
 </script>
 
 <script id='racive-download-link' type='text/ractive'>
 {{#dataURI}}
+<h4>Download link below</h4>
 <a href="{{dataURI}}" download="{{fileName}}">Download opml</a>
 {{/dataURI}}
+
 </script>
 
 
