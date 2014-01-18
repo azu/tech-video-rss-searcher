@@ -6,7 +6,7 @@ Download opml file of the results that you search Vimeo & Youtube.
 
 ## Usage
 
-1. Seach Tag
+1. Search Tag
 2. Add To list
 3. Download opml
 
