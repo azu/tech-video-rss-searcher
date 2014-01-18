@@ -10,7 +10,10 @@
 <div class="container">
     <div class="row clearfix">
         <div class="col-md-12 column">
-            <h1>Tech Video RSS Searcher</h1>
+            <h1>Tech Video RSS Searcher
+                <iframe src="http://ghbtns.com/github-btn.html?user=azu&repo=tech-video-rss-searcher&type=watch&count=true"
+                        allowtransparency="true" frameborder="0" scrolling="0" width="62" height="20"></iframe>
+            </h1>
         </div>
     </div>
     <div class="row clearfix">
@@ -29,6 +32,7 @@
 
 <script id='racive-search-box' type='text/ractive'>
 <input placeholder='Type tag' value='{{tag}}' proxy-keydown="onEnter" />
+
 </script>
 <script id='racive-search-result' type='text/ractive'>
 {{#tag}}
@@ -39,6 +43,7 @@
 </ul>
 {{/tag}}
 
+
 </script>
 
 <script id='racive-subscriber-box' type='text/ractive'>
@@ -48,6 +53,7 @@
 </ul>
 {{/tags}}
 
+
 </script>
 
 <script id='racive-download-link' type='text/ractive'>
@@ -55,6 +61,7 @@
 <h4>Download link below</h4>
 <a href="{{dataURI}}" download="{{fileName}}">Download opml</a>
 {{/dataURI}}
+
 
 </script>
 
