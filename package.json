@@ -4,7 +4,8 @@
   "description": "tech video searcher",
   "main": "app.js",
   "dependencies": {
-    "debowerify": "~0.5.2"
+    "debowerify": "~0.5.2",
+    "opml-generator": "~1.0.1"
   },
   "devDependencies": {
     "debowerify": "~0.5.2",
@@ -15,7 +16,7 @@
     "gulp-util": "~2.2.12"
   },
   "scripts": {
-    "start": "gulp server",
+    "start": "beefy app/app.js:public/app.js 8989 -- -t debowerify",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

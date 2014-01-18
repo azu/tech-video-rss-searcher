@@ -7,7 +7,7 @@
 <div id="search-box"></div>
 <div id="search-result"></div>
 <div id="subscriber-box"></div>
-
+<div id="download-link"></div>
 <script id='racive-search-box' type='text/ractive'>
 <input placeholder='Type tag' value='{{tag}}' proxy-keydown="onEnter" />
 </script>
@@ -28,6 +28,13 @@
 </ul>
 {{/tags}}
 </script>
+
+<script id='racive-download-link' type='text/ractive'>
+{{#dataURI}}
+<a href="{{dataURI}}" download="{{fileName}}">Download opml</a>
+{{/dataURI}}
+</script>
+
 
 <script src="public/app.js"></script>
 </body>

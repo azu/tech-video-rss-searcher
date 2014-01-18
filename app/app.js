@@ -25,14 +25,29 @@ var subscriberBox = new Ractive({
         tags: subscribersModel.getList()
     }
 });
+var downloadBox = new Ractive({
+    el: 'download-link',
+    template: "#racive-download-link",
+    data: {
+        fileName: "video-rss.opml",
+        dataURI: null
+    }
+});
+
 searchResult.on("addToList", function (proxyObject) {
     subscribersModel.push(searchBox.get("tag"));
 });
-searchBox.observe("tag", function(newValue) {
+searchBox.observe("tag", function (newValue) {
     searchResult.set("tag", newValue);
 });
-
 searchBox.on("onEnter", require("./lib/wrapper-key-event").onEnter(function (event) {
     searchResult.set("tag", event.context.tag);
 }));
+subscriberBox.observe("tags", function (newValue) {
+    if (newValue.length === 0) {
+        return;
+    }
+    var dataURI = require("./models/opml-dataset").toBase64(newValue);
+    downloadBox.set("dataURI", dataURI);
+});
 

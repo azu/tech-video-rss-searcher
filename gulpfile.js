@@ -18,7 +18,7 @@ gulp.task('watch', function () {
     });
 });
 
-// alt : `beefy app/index.js:public/index.js 8989 -- -t debowerify`
+// alt : `beefy app/app.js:public/app.js 8989 -- -t debowerify`
 gulp.task("server", function () {
     var connect = require("connect");
     connect().use(connect.static(__dirname)).listen(8989);
