@@ -1,19 +1,25 @@
-# tech-video-rss-searcher
+# [Tech Video RSS Searcher](http://azu.github.io/tech-video-rss-searcher/ "Tech Video RSS Searcher")
 
-- [ ] Write a project description
+Download opml file of the results that you search Vimeo & Youtube.
 
-## Installation
-
-- [ ] Describe the installation process
+* http://azu.github.io/tech-video-rss-searcher/
 
 ## Usage
 
-- [ ] Write usage instructions
+1. Seach Tag
+2. Add To list
+3. Download opml
+
+## Internal Architecture
+
+* browserify + debowerify + bower + (beefy or gulp)
+* Use common.js as module(including bower)
+* Use gulp for task manager.
 
 ## Debug
 
 1. `npm install`
-2. `gulp server`
+2. `gulp server` or `npm start`
 3. `open http://localhost:8989/`
 
 ## Contributing
