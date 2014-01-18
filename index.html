@@ -4,12 +4,31 @@
     <title>App</title>
 </head>
 <body>
-<div id='container'></div>
+<div id="search-box"></div>
+<div id="search-result"></div>
+<div id="subscriber-box"></div>
 
-<script id='myTemplate' type='text/ractive'>
-        <p>{{greeting}}, {{recipient}}!</p>
-
+<script id='racive-search-box' type='text/ractive'>
+<input placeholder='Type tag' value='{{tag}}' proxy-keydown="onEnter" />
 </script>
+<script id='racive-search-result' type='text/ractive'>
+{{#tag}}
+<button type="button" proxy-click="addToList" >Add to list</button>
+<ul>
+  <li><a href="http://vimeo.com/tag:{{encodeURIComponent(tag)}}" title="Vimeo rss">{{tag}} on Vimeo</a></li>
+  <li><a href="http://www.youtube.com/results?search_sort=video_date_uploaded&search_query={{encodeURIComponent(tag)}}" title="Youtube rss">{{tag}} on Youtube</a></li>
+</ul>
+{{/tag}}
+</script>
+
+<script id='racive-subscriber-box' type='text/ractive'>
+{{#tags}}
+<ul>
+  <li>{{.}}</li>
+</ul>
+{{/tags}}
+</script>
+
 <script src="public/app.js"></script>
 </body>
 </html>

@@ -1,7 +1,8 @@
 var gulp = require('gulp');
+var gutil = require("gulp-util")
 var browserify = require('gulp-browserify');
 gulp.task('build', function () {
-    gulp.src('./app/app.js', { read: false })
+    return gulp.src('./app/app.js', { read: false })
         .pipe(browserify({
             standalone: "app.js",
             transform: ["debowerify"],
@@ -11,12 +12,13 @@ gulp.task('build', function () {
 });
 gulp.task('watch', function () {
     gulp.run('build');
-    gulp.watch('./app/**/*.js', function () {
+    var watch = require('gulp-watch');
+    watch({ glob: './app/**/*.js'}, function (event) {
         gulp.run('build');
     });
 });
 
-// alt : `beefy app/app.js:public/app.js 8989 -- -t debowerify`
+// alt : `beefy app/index.js:public/index.js 8989 -- -t debowerify`
 gulp.task("server", function () {
     var connect = require("connect");
     connect().use(connect.static(__dirname)).listen(8989);
