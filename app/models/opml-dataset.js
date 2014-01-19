@@ -22,7 +22,7 @@ var opmlExport = function (list) {
                 title: "Youtube :" + current,
                 text: "Youtube : " + current,
                 type: "rss",
-                "xmlUrl": "http://gdata.youtube.com/feeds/base/videos?v=2&alt=rss&orderby=published" + encodeURIComponent(current) + "/rss",
+                "xmlUrl": "http://gdata.youtube.com/feeds/base/videos?v=2&alt=rss&orderby=published&q=" + encodeURIComponent(current),
                 "htmlUrl": "http://www.youtube.com/results?search_sort=video_date_uploaded&search_query=" + encodeURIComponent(current)
             }
         ]);
