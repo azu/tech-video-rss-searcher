@@ -4,7 +4,6 @@ var browserify = require('gulp-browserify');
 gulp.task('build', function () {
     return gulp.src('./app/app.js', { read: false })
         .pipe(browserify({
-            standalone: "app.js",
             transform: ["debowerify"],
             debug: true
         }))
