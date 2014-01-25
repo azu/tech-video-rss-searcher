@@ -11,7 +11,8 @@ gulp.task('build', function () {
 });
 gulp.task('watch', function () {
     gulp.run('build');
-    gulp.watch({ glob: './app/**/*.js'}, function (event) {
+    var watch = require('gulp-watch');
+    watch({ glob: './app/**/*.js'}, function (event) {
         gulp.run('build');
     });
 });
