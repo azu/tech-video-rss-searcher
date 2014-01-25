@@ -1,5 +1,4 @@
 var gulp = require('gulp');
-var gutil = require("gulp-util")
 var browserify = require('gulp-browserify');
 gulp.task('build', function () {
     return gulp.src('./app/app.js', { read: false })
