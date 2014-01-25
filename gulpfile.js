@@ -9,19 +9,14 @@ gulp.task('build', function () {
         }))
         .pipe(gulp.dest('./public/'));
 });
-gulp.task('watch', function () {
-    gulp.run('build');
-    gulp.watch('./app/**/*.js', function (event) {
-        gulp.run('build');
-    });
+
+gulp.task('watch', ['build'], function () {
+    gulp.watch('./app/**/*.js', ['build']);
 });
 
 // alt : `beefy app/app.js:public/app.js 8989 -- -t debowerify`
-gulp.task("server", function () {
+gulp.task("server", ["watch"], function () {
     var connect = require("connect");
     connect().use(connect.static(__dirname)).listen(8989);
-    gulp.run("watch");
 });
-gulp.task('default', function () {
-    gulp.run('build');
-});
+gulp.task('default', ['build']);
