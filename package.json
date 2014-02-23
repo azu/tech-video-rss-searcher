@@ -7,11 +7,14 @@
     "opml-generator": "~1.0.1"
   },
   "devDependencies": {
-    "debowerify": "~0.5.2",
-    "gulp": "~3.5.0",
-    "gulp-browserify": "~0.3.3",
-    "connect": "~2.12.0",
-    "gulp-util": "~2.2.12"
+    "debowerify": "~0.6.0",
+    "gulp": "~3.5",
+    "gulp-browserify": "~0.4.6",
+    "connect": "~2.13.0",
+    "gulp-util": "~2.2.12",
+    "cacheify": "~0.3.2",
+    "level": "~0.18.0",
+    "esprima": "~1.0.4"
   },
   "scripts": {
     "start": "beefy app/app.js:public/app.js 8989 -- -t debowerify",

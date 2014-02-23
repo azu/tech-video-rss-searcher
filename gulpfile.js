@@ -1,9 +1,14 @@
 var gulp = require('gulp');
 var browserify = require('gulp-browserify');
+var level = require('level'),
+    db = level('./cachefy');
+var cacheify = require('cacheify');
+var debowerify = require("debowerify");
+var debowerCacheify = cacheify(debowerify, db);
 gulp.task('build', function () {
     return gulp.src('./app/app.js', { read: false })
         .pipe(browserify({
-            transform: ["debowerify"],
+            transform: [debowerCacheify],
             debug: true
         }))
         .pipe(gulp.dest('./public/'));
